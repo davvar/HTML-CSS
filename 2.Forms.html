@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+    .container{
+        background: #b92b27;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        height: 100vh;
+    }
+
+    .form-container{
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        height:60% ;
+        width:60% ;
+        border-radius: 5px;
+        border-bottom: 5px solid  #dd1818;
+        background: #2980B9;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    legend{
+        color: aliceblue;
+        display: block;
+        margin: 25px;
+        font-size: 24px;
+    }
+    input{
+        height: 27px;
+        color: white;
+        width: 45%;
+        border-radius: 5px;
+        margin: 8px ;
+        border: none;
+        background-color: #3f1313;
+        opacity: 0.8;
+        
+    }
+
+    button{
+        position: relative;
+        height: 35px;
+        width: 25%;
+        top: 10px;
+        left: 70%;
+        border-radius: 5px;
+        border: 2px #dd1818 solid;
+        color:#dd1818;
+        background-color:transparent;
+    }
+
+    p{
+        color: #2980B9;
+        display: inline-block;
+        font-size: 13px;
+        margin: 7px;
+    }
+    #validator{
+        
+        width: 50px;
+        background-color: rgb(26, 28, 29);
+        height: 20px;
+        margin: 0 -3px;
+    }
+    input:focus{
+        background-color: rgb(107, 175, 230)
+    }
+    button:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form action="">
+                <legend>Sign Up</legend>
+                <input id="username" type="text" placeholder="  User Name...">
+                <input type="password" placeholder="  Password..."><br>
+                <input type="email" placeholder="   Email Address...">
+                <input type="email" placeholder="   Confirm Email..."><br> 
+                <input type="text" placeholder="   Address...">  
+                <input type="text" placeholder="   Zipcode...">  <br>
+                <input type="number" placeholder="  Phone Number...">
+                <input type="number" placeholder="  Mobile Number...">
+                <button type="submit">SIGN-IN NOW</button>
+            </form>
+            <p>What does this equal to ?</p>
+            <p>3 + 1</p>
+            <input type="text" id="validator">
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
