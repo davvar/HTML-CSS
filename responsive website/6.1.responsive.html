@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="6.1.responsive.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+            <div class="layer">
+                <div class="icon-bar">
+                        <div class="icons">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-linkedin"></i>
+                        </div>
+               </div>
+               <div class="navigation-bar">
+                    <div class="logo"></div>
+                    <h2>Flex</h2>
+                    <nav>
+                        <ul> 
+                            <li><a href="#">Home</a></li> 
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Portfolio</a></li> 
+                            <li><a href="#">Team</a></li> 
+                            <li><a href="#">External</a></li> 
+                            <li><a href="#">Contact</a></li> 
+                        </ul>
+                    </nav>
+                </div>
+        <header>
+ 
+                <div class="heading">
+                    <h1>DIGITAL MARKETING</h1>
+                    <p>MORE VISITORS TO YOUR WEBSITE</p>
+                        <button>MOBILE WEBSITE</button>
+                </div>
+            
+        </header>
+        <div class="img-changer">
+            <div onclick="changeToThis(1,`slide1.jpg`)" class="div1"></div>
+            <div onclick="changeToThis(2,`slide3.jpg`)" class="div2"></div>
+            <div onclick="changeToThis(3,`slide2.jpg`)" class="div2"></div>
+        </div>
+        <section id="services">
+            <div class="services" >
+                <h3>OUR SERVICES</h3>
+                <p>WE DESIGN MOBILE-FIRST WEBSITES FOR YOU</p>
+            </div>
+        
+            <div class="services-imgs">
+                    <div class="services-imgs-child si-child1"  >
+                        <div class="unhidden"><i class="fa fa-code"></i></div>
+                        <div class="hidden">
+                            <h5>HTML5 Coding</h5>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur quo? Voluptas obcaecati quasi nemo!</p>
+                        </div>
+                    </div>
+                    <div class="services-imgs-child si-child2">
+                        <div  class="unhidden"><i class="fa fa-paper-plane"></i></div>
+                         <div class="hidden">
+                           <h5>Our Support</h5>
+                           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur quo? Voluptas obcaecati quasi nemo!</p>
+                         </div>
+                    </div >
+                    <div class="services-imgs-child si-child3">
+                        <div class="unhidden"><i class="fa fa-university"></i></div> 
+                        <div class="hidden">
+                         <h5>Our Design</h5>
+                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur quo? Voluptas obcaecati quasi nemo!</p>
+                         </div>
+                    </div>
+                    <div class="services-imgs-child si-child4">
+                        <div class="unhidden"><i class="fa fa-flask"></i></div> 
+                        <div class="hidden">
+                          <h5>Go for mobile</h5>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur quo? Voluptas obcaecati quasi nemo!</p>
+                        </div>
+                    </div>
+                
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="portfolio">
+                <h3>OUR PORTFOLIO</h3>
+                <p>AMAZING WORK FOR OUR CLIENTS</p>
+                <div class="port-img">
+                    <div class="img1 img"></div>
+                    <div class="img2 img"></div>
+                    <div class="img3 img"></div>
+                    <div class="img4 img"></div>
+                    <div class="img5 img"></div>
+                    <div class="img6 img"></div>
+                    <div class="img7 img"></div>
+                    <div class="img8 img"></div>
+                </div>
+            </div>
+        </section>
+        <sectio id="team">
+            <div class="team">
+                <h3>OUR TEAM</h3>
+                <p>OUR PEOPLE ARE VERY UNITED FOR YOU</p>
+                <div class="team-imgs">
+                    <div class="img1"></div>
+                    <div class="img2"></div>
+                    <div class="img3"></div>
+                    <div class="img4"></div>
+                </div>
+            </div>
+         </sectio>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        const imgChanger = document.querySelectorAll(".img-changer div");
+        const wrapper = document.querySelector(".wrapper");
+        const serviceImgChildren = document.querySelectorAll(".services-imgs-child")
+        const unhidden = document.querySelectorAll(".unhidden i");
+        const hidden = document.querySelectorAll(".hidden");
+  
+            console.log(serviceImgChildren[0])
+          
+        for(let child of serviceImgChildren){
+            child.addEventListener("mouseover" , (num) =>{
+                hidden[num].style.zIndex = "-1";
+                unhidden[num].style.zIndex = "+1";
+            })
+        
+            child.addEventListener("mouseout" , (num) =>{
+                unhidden[num].style.zIndex = "-1";
+                hidden[num].style.zIndex = "+1";
+            })
+        
+            console.log(child);
+            
+        }
+
+
+
+
+
+        function changeToThis(div, img ){
+            for(let i = 0;i < imgChanger.length; i++){
+                if( i == div -1 ){
+                    wrapper.style.background = `url("${img}") no-repeat`;
+                    wrapper.style.backgroundSize = `1600px 750px`;
+                    imgChanger[i].style.background = `black`
+                    imgChanger[i-1].style.background = `grey`
+                    imgChanger[i+1].style.background = `grey`
+            }
+            }
+        }
+
+    
+    </script>
+</body>
+</html> 
