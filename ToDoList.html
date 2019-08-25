@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        body {
+            background: linear-gradient(to left, lightblue, rgb(230, 227, 227), rgb(128, 128, 241));
+        }
+
+        .wrapper {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            background: linear-gradient(to left, lightblue, rgb(230, 227, 227), rgb(128, 128, 241));
+        }
+
+        .container {
+            position: absolute;
+            display: inline-block;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 20%;
+            min-width: 250px;
+            border: 1px solid rgb(234, 234, 234);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            transition: all .3s;
+            box-shadow: 0 0 10px 1px grey
+        }
+
+        .top {
+            background: linear-gradient(to top, rgb(234, 234, 234), rgb(233, 229, 229));
+
+        }
+
+
+        nav {
+            margin: auto;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            color: rgb(93, 107, 121);
+            padding: 8px 0;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-family: cursive;
+
+        }
+
+        .fa-bars {
+            color: rgb(140, 149, 157);
+            font-size: 20px;
+            transform: rotate(0deg);
+            /* transition: all .5s */
+        }
+
+        .fa-bars:hover {
+            cursor: pointer;
+            color: rgb(93, 107, 121);
+        }
+
+        .fa-times-circle {
+            color: rgb(140, 149, 157);
+            font-size: 23px;
+            cursor: pointer;
+            /* transition: all .5s */
+        }
+
+
+        .bottom {
+            width: 100%;
+            display: none;
+            position: absolute;
+            border: 1px solid rgb(234, 234, 234);
+        }
+
+        .show {
+            position: absolute;
+            right: -1px;
+            display: block;
+            background: white;
+            border: 1px solid rgb(234, 234, 234);
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            min-width: 250px;
+            box-shadow: 0 5px 10px 1px grey;
+
+
+        }
+
+        .tasks {
+            display: flex;
+            justify-content: flex-end;
+            margin: 10px auto 0;
+            width: 100%;
+            position: relative;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(234, 234, 234);
+
+        }
+
+        .tasks div {
+            border: 2px solid rgb(138, 154, 155);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            top: 40%;
+            transform: translate(30%, -50%);
+            cursor: pointer;
+
+
+        }
+
+        .tasks .div {
+            border: 2px solid rgb(52, 191, 110);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            top: 40%;
+            transform: translate(30%, -50%);
+            cursor: pointer;
+
+        }
+
+
+
+        .tasks div i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(52, 191, 110);
+            font-size: 20px;
+        }
+
+        p {
+            width: 80%;
+            overflow: auto;
+            color: rgb(138, 154, 155);
+            font-size: 18px;
+            margin: 0 0 15px
+        }
+
+        .done {
+            color: rgb(52, 191, 110);
+            text-decoration: line-through
+        }
+
+        .boders {
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            border: 1px solid rgb(119, 88, 88);
+        }
+
+        .tasks span {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(0, -50%);
+            opacity: .5;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        .tasks span::after {
+            content: "remove";
+            position: absolute;
+            left: -25px;
+            bottom: 170%;
+            font-family: arial;
+            color: rgb(85, 81, 81);
+            background: lightgrey;
+            padding: 1px 3px;
+            border-radius: 2px;
+            opacity: 0;
+        }
+
+
+
+        .tasks span:hover {
+            opacity: 1;
+        }
+
+        span:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="container">
+            <div class="top">
+                <nav>
+                    <h1>Tasks</h1>
+                    <div><i style="transform: rotate(0deg)" id="navbtn" class="fa fa-bars"></i></div>
+                </nav>
+            </div>
+            <div class="bottom">
+                <div class="body">
+                    <div class="tasks">
+                        <div class="round"><i class="fa"></i></div>
+                        <p>Prepare for Session</p><span class="fa fa-times" aria-hidden="true"></span>
+                    </div>
+                    <div class="tasks">
+                        <div class="round"><i class="fa"></i></div>
+                        <p>Assign Tasks</p><span class="fa fa-times" aria-hidden="true"></span>
+                    </div>
+                    <div class="tasks">
+                        <div class="round"><i class="fa"></i></div>
+                        <p>Be there on time</p><span class="fa fa-times" aria-hidden="true"></span>
+                    </div>
+                    <div class="tasks">
+                        <div class="round"><i class="fa"></i></div>
+                        <p>Start Session</p><span class="fa fa-times" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="addTasks">
+                    <input type="text" placeholder="Add more tasks">
+                    <button class="add">Add<i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const navBtn = document.querySelector("#navbtn");
+        const bottom = document.querySelector(".bottom");
+        const tasksBody = document.querySelector(".body");
+        const container = document.querySelector(".container");
+        let navDivs;
+        let navDivI;
+        let p;
+        const input = document.querySelector("input");
+        const button = document.querySelector(".add");
+        let deleteTasks = document.querySelectorAll(".tasks span");
+
+
+
+        console.log(navBtn.classList.value)
+
+
+        button.addEventListener("click", () => {
+
+            if (input.value.length > 0) {
+                tasksBody.innerHTML += `<div class="tasks">
+                                             <div class="round"><i class="fa"></i></div>
+                                             <p>${input.value}</p><span class="fa fa-times" aria-hidden="true">
+                                        </div>`;
+            }
+            addingEvent()
+            deleteT()
+        })
+
+        navBtn.addEventListener("click", () => {
+            if (navBtn.classList.value == "fa fa-bars") {
+                navBtn.classList.value = "fa fa fa-times-circle"
+                bottom.classList.toggle("show")
+            }
+            else {
+                navBtn.classList.value = "fa fa-bars"
+                bottom.classList.toggle("show")
+            }
+
+        })
+
+        function addingEvent() {
+            navDivs = document.querySelectorAll(".tasks div");
+            p = document.getElementsByTagName("p");
+            navDivI = document.querySelectorAll(".tasks div i");
+
+            console.log(navDivs, p)
+            for (let a = 0; a < navDivs.length; a++) {
+                navDivs[a].addEventListener("click", () => {
+                    navDivs[a].classList.toggle("div")
+                    navDivI[a].classList.toggle("fa-check")
+                    p[a].classList.toggle("done")
+                })
+            }
+        }
+
+
+        function deleteT() {
+            deleteTasks = document.querySelectorAll(".tasks span")
+
+            for (let a = 0; a < deleteTasks.length; a++) {
+                deleteTasks[a].onclick = () => {
+                    document.querySelectorAll(".tasks")[a].style.display = "none"
+                }
+            }
+        }
+
+
+
+
+        window.onload = () => {
+            deleteT()
+            addingEvent()
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
