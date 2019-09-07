@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.box1 {
+  width: 50%;
+  background: linear-gradient(
+      to bottom,
+      rgba(68, 189, 118, 0.9),
+      rgba(68, 189, 118, 0.9)
+    ),
+    url("payyed.jpg"), no-repeat;
+  background-size: cover;
+  color: white;
+}
+.content{
+    width: 70%;
+    margin: 6% auto;
+}
+
+/* ==================================================================== */
+.box2 {
+  width: 50%;
+  background: rgb(241, 245, 246);
+}
+
+.box3 {
+  width: 50%;
+  background: rgb(241, 245, 246);
+  display: none;
+}
+
+/* ==================================================================== */
+
+h3 {
+  font-size: 35px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: italic;
+  padding-bottom: 40%;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 45px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 5%;
+}
+
+p {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box2 .content {
+  margin: 10% auto;
+  width: 60%;
+  font-family: "Montserrat", sans-serif;
+}
+.box3 .content {
+  margin: 15% auto;
+  width: 60%;
+  font-family: "Montserrat", sans-serif;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+h2 {
+  padding-bottom: 7%;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+label {
+  color: grey;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 15px;
+  color: gray;
+}
+
+input:focus {
+  border: 1px solid lightskyblue;
+}
+:-ms-input-placeholder {
+  color: lightgrey;
+}
+
+[type="submit"] {
+  background: rgb(45, 190, 97);
+  color: white;
+  font-weight: bolder;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+
+[type="submit"]:hover {
+  background: rgb(39, 163, 84);
+  box-shadow: -2px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.box2 p {
+  font-size: 16px;
+  text-align: center;
+  color: grey;
+}
+
+.box2 p a {
+  text-decoration: none;
+  color: rgb(45, 190, 97);
+}
+.box3 p {
+  font-size: 16px;
+  text-align: center;
+  color: grey;
+}
+
+.box3 p a {
+  text-decoration: none;
+  color: rgb(45, 190, 97);
+  cursor: pointer;
+}
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.checkbox a {
+  text-decoration: none;
+  color: rgb(45, 190, 97);
+  font-size: 14px;
+}
+
+.checkbox div {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.checkbox div label {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+.checkbox div input {
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 992px) {
+  .content {
+    width: 90%;
+    margin: 5% 0 0 10%;
+  }
+  .box2 .content {
+    margin: 10% auto;
+    width: 85%;
+  }
+  .box3 .content {
+    margin: 15% auto;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 764px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .box1 {
+    width: 100%;
+  }
+  .box2 {
+    width: 100%;
+  }
+  .box3 {
+    width: 100%;
+  }
+
+  .content {
+    width: 70%;
+    margin: 5% 0 0 10%;
+  }
+  .box2 .content {
+    margin: 10% auto;
+    width: 60%;
+  }
+  .box3 .content {
+    margin: 10% auto;
+    width: 60%;
+  }
+
+  h3 {
+    padding-bottom: 10%;
+  }
+
+  .box1 p{
+      padding-bottom: 20%
+  }
+}
+
+
+@media screen and (max-width: 575px){
+    .content {
+        width: 90%;
+        margin: 5% 0 0 10%;
+      }
+      .box2 .content {
+        margin: 10% auto;
+        width: 90%;
+      }
+      .box3 .content {
+        margin: 10% auto;
+        width: 90%;
+      }
+}
