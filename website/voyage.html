@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="voyage.css">
+    <title>Voyage</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="hidden-nav">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">destinations</a>
+                    <a href="#">cruises</a>
+                    <a href="#">specials</a>
+                    <a href="#">holidays</a>
+                    <a href="#">blog</a>
+                    <i class="fa fa-times" id="closeNav"></i>
+                </nav>
+            </div>
+            <div class="login" id="home">
+                <div class="left">
+                    <a href="#">Agent Login</a>
+                    <p>Not a Member? <a href="#" id="register">Register</a></p>
+                    <p>Call Us Now <a href="#"> +374 (99) 38-99-19</a></p>
+                </div>
+                <div class="right">
+                    <div class="div"><i class="fa fa-facebook fa"></i></div>
+                    <div class="div"><i class="fa fa-twitter"></i></div>
+                    <div class="div"><i class="fa fa-instagram"></i></div>
+                    <div class="div"><i class="fa fa-vk"></i></div>
+                </div>
+            </div>
+        </header>
+        <div class="navigation">
+            <div class="logo"></div>
+            <div class="burger" id="openNav"><i class="fa fa-bars "></i></div>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">destinations</a>
+                <a href="#">cruises</a>
+                <a href="#">specials</a>
+                <a href="#">holidays</a>
+                <a href="#">blog</a>
+                <i class="fa fa-search"></i>
+            </nav>
+        </div>
+        <main>
+            <div class="icon left"><i class="fa fa-chevron-left"></i></div>
+            <div class="icon right"><i class="fa fa-chevron-right"></i></div>
+            <div class="content">
+                <h1>To travel is to live</h1>
+                <p>you don't need magic to Dissapear.all you need is a destination</p>
+                <button>show on the map</button>
+                <button>more info</button>
+            </div>
+        </main>
+        <div class="bottom">
+            <div class="content">
+                <div class="" id="holidays">
+                    <p>find your</p>
+                    <h3>holydays</h3>
+                </div>
+                <form action="">
+                    <label for="destination">where</label>
+                    <input type="text" id="destination" placeholder="Destination">
+                    <label for="date">when</label>
+                    <input type="date" id="date" placeholder="Select Date">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+        <section>
+            <h2>special offers</h2>
+            <p>best 2019 packages where people love to stay</p>
+            <div class="photos1">
+                <div class="img1 img"></div>
+                <div class="img2 img"></div>
+                <div class="img3 img"></div>
+                <div class="img4 img"></div>
+                <div class="img5 img"></div>
+                <div class="img6 img"></div>
+            </div>
+        </section>
+
+        <section class="section2">
+            <h2>holydays type</h2>
+            <p>let explore your dreams to travel the world</p>
+            <div class="photos">
+                <div class="round1 round"><i class="fa fa-ship fa-2x"></i><span>Cruise</span></div>
+                <div class="round2 round"><i class="fa fa-building fa-2x"></i><span>city breaks</span></div>
+                <div class="round3 round"><i class="fa fa-heart fa-2x"></i> <span>honeymoon</span></div>
+                <div class="round4 round"><i class="fa fa-compass fa-2x"></i><span>adventure</span></div>
+
+            </div>
+        </section>
+        <footer>
+            All rigths reserved.2019
+            <div class="to-top"><a href="#home"><i class="fa fa-chevron-left fa-2x"></i></a> </div>
+        </footer>
+
+    </div>
+    <script>
+
+        let closeNav = document.getElementById("closeNav")
+        let openNav = document.getElementById("openNav")
+        let hiddenNav = document.querySelector(".hidden-nav")
+
+        openNav.onclick = ()=>{
+            hiddenNav.style.display = "block"
+            setTimeout(()=>{
+                hiddenNav.style.transform = "translate(0%)";
+            },50)
+        }
+        
+        closeNav.onclick = ()=>{
+            hiddenNav.style.transform = "translate(100%)";
+            setTimeout(()=>{
+                hiddenNav.style.display = "none"
+            },310)
+        }
+        
+    </script>
+</body>
+
+</html>
