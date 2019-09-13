@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgba(2, 2, 2, 0.9);
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /* background: rgba(2, 2, 2, 0.9); */
+        }
+
+        /* ======================================================================== */
+        .container {
+            width: 350px;
+            height: 90vh;
+            margin: 5vh auto;
+            background: rgb(41, 47, 71);
+            box-shadow: 5px 5px 25px 20px rgba(0, 0, 0, .2);
+            display: none;
+            position: relative;
+        }
+
+        .container-content {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+        }
+
+        h3 {
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: rgb(111, 128, 184);
+            font-family: cursive;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            width: 100%;
+
+        }
+
+        .icon {
+            height: 45px;
+            width: 45px;
+            background: rgb(245, 187, 25);
+            border-radius: 50%;
+            margin: 0 15px;
+            border: 1px solid white;
+            position: relative;
+            cursor: pointer;
+
+        }
+
+        .icon2 {
+            background: rgb(243, 121, 54);
+        }
+
+        .icon3 {
+            background: rgb(13, 153, 168);
+        }
+
+        .icon::before {
+            content: "PARENT";
+            position: absolute;
+            font-size: 9px;
+            color: rgb(245, 187, 25);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            left: 50%;
+            top: 130%;
+            transform: translate(-50%, -50%);
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+
+        .icon2::before {
+            content: "CHILD";
+            color: rgb(243, 121, 54);
+
+        }
+
+        .icon3::before {
+            content: "TEACHER";
+            color: rgb(13, 153, 168);
+
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .bottom div {
+            background: rgb(41, 47, 71);
+            border: 1px solid rgb(78, 88, 115);
+            border-radius: 25px;
+            padding: 2% 0;
+            margin: 0 0 15px;
+            position: relative;
+        }
+
+        i {
+            color: rgba(126, 139, 181, .7);
+            position: absolute;
+            top: 50%;
+            left: 6%;
+            transform: translate(0, -50%);
+            font-size: 5px;
+        }
+
+        .fa-envelope-o {
+            left: 5%;
+        }
+
+
+        input {
+            background: rgb(41, 47, 71);
+            border: none;
+            color: rgba(126, 139, 181, .7);
+            letter-spacing: 1px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            position: relative;
+            left: 0%;
+            width: 70%;
+
+        }
+
+
+        :-ms-input-placeholder {
+            color: rgba(126, 139, 181, .7);
+            letter-spacing: 1px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+        }
+
+        ::-ms-input-placeholder {
+            color: rgba(126, 139, 181, .7);
+            letter-spacing: 1px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+
+        }
+
+        ::placeholder {
+            color: rgba(126, 139, 181, .7);
+            letter-spacing: 1px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+
+        }
+
+        .submit {
+            border-radius: 15px;
+            padding: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            background: linear-gradient(to right, rgb(251, 41, 41), rgba(245, 189, 3, 0.822));
+            background-size: cover;
+            border: transparent;
+            color: whitesmoke;
+            margin: 20px 0;
+        }
+
+        .footer {
+            font-size: 12px;
+            font-family: cursive;
+            color: rgb(122, 122, 132);
+            margin: 30px 0;
+        }
+
+        a {
+            color: rgb(213, 109, 54);
+            text-decoration: none;
+            font-family: cursive;
+            margin: 50px 0;
+            padding-bottom: 50px;
+        }
+
+
+        .btns {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+        #btn1,
+        #btn2 {
+            width: 130px;
+            height: 40px;
+            margin: 10px;
+            z-index: 1;
+            position: relative;
+            border-radius: 5px;
+            border: 1px solid white;
+            color: white;
+            font-weight: bold;
+            background:transparent;
+            letter-spacing: .5px;
+              
+
+
+        }
+
+        #btn1{
+
+        }
+
+       
+
+        .welcome::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 90%;
+            background: rgb(240, 237, 237);
+            top: 5%;
+            right: -1.5px;
+            animation: typing ease .8s infinite;
+
+        } 
+
+        @keyframes typing {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        .fa-times-circle {
+            position: absoluter;
+            left: 338px;
+            top: 0;
+            font-size: 30px;
+            cursor: pointer;
+            transition: all .2s;
+            border-radius: 50%;
+            color: rgba(82, 80, 80, 0.8)
+        }
+
+        .fa-times-circle:hover {
+            box-shadow: 1px 5px 20px 10px rgba(22, 22, 22, 0.2);
+            color: rgba(160, 155, 155, 0.8)
+        }
+
+        /* ===================================================================== */
+
+
+        .container1 {
+            width: 350px;
+            height: 90vh;
+            margin: 5vh auto;
+            background: rgb(41, 47, 71);
+            box-shadow: 5px 5px 25px 20px rgba(0, 0, 0, .2);
+            display: none;
+            position: relative;
+        }
+
+        .container1 .container-content {
+            width: 100%
+        }
+
+        .container1 .top {
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            border-top: 1px solid grey;
+            border-bottom: 1px solid grey;
+            padding: 10px 0 30px;
+
+        }
+
+        .facebook {
+            padding: 14px 70px;
+            background: rgb(65, 93, 174);
+            position: relative;
+            color: white;
+            font-size: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            letter-spacing: 1px;
+            margin: 10px 0 30px;
+            cursor: pointer;
+        }
+
+        .google {
+            cursor: pointer;
+            padding: 14px 60px;
+            background: rgb(221, 75, 57);
+            position: relative;
+            color: white;
+            font-size: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .container1 .top i {
+            font-size: 20px;
+            color: rgb(32, 32, 32)
+        }
+
+
+        .container1 p {
+            position: relative;
+            bottom: 22px;
+            background: rgb(41, 47, 71);
+            display: inline-block;
+            padding: 0 10px;
+            color: grey;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+        .container1 .signin-fields div {
+            margin: 0 0 18px;
+            padding: 0px 70px;
+            border-bottom: 1px solid grey;
+        }
+
+        .container1 .signin-fields div input {
+            width: 170%;
+            margin: 0 -35%;
+
+        }
+
+
+
+        .container1 .sign-in_btn a {
+            display: block;
+            text-align: left;
+            margin: 0 0 20px;
+            padding: 5px 0;
+            color: white;
+            text-decoration: underline;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+
+        .container1 .sign-in_btn button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: rgb(0, 128, 255);
+            border: none;
+            color: white;
+            margin: 0 0 25px;
+        }
+
+        .container1 .new_account button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: rgb(73, 78, 96);
+            border: none;
+            color: white;
+            margin: 0 0 20px;
+        }
+
+
+        a,
+        button {
+            cursor: pointer;
+        }
+
+        .welcome{
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%,0);
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 3vw;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="container1">
+            <i id="signin-closer" class="fa fa-times-circle"></i>
+            <div class="container-content">
+                <h3>Sign in</h3>
+                <div class="top">
+                    <div class="facebook">
+                        <i class="fa fa-facebook"></i>SIGN IN WITH FACEBOOK
+                    </div>
+                    <div class="google">
+                        <i class="fa fa-google"></i>SIGN IN WITH GOOGLE
+                    </div>
+                </div>
+                <div class="signin">
+                    <div class="signin-fields">
+                        <p>Or Sign In Using Account</p>
+                        <div class=""><input type="email" placeholder="Email"></div>
+                        <div class=""><input type="password" placeholder="Password"></div>
+                    </div>
+                    <div class="sign-in_btn">
+                        <a href="#">Forgot Password</a>
+                        <button>Sign in</button>
+                    </div>
+                    <div class="new_account">
+                        <button>Create New Account</button>
+                    </div>
+                    <div class="empty-space"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================================= -->
+
+
+    <div class="container">
+        <i id="signup-closer" class="fa fa-times-circle"></i>
+        <div class="container-content">
+            <div class="container-content">
+                <div class="top">
+                    <h3>Sign up</h3>
+                    <p>WHO YOU ARE?</p>
+                    <div class="icons">
+                        <div class="icon icon1"></div>
+                        <div class="icon icon2"></div>
+                        <div class="icon icon3"></div>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="">
+                        <i class="fa fa-user-o" aria-hidden="true">
+                        </i><input type="text" name="username" value="" placeholder=" Username" required>
+                    </div>
+                    <div class="">
+                        <i class="fa fa-envelope-o" aria-hidden="true">
+                        </i><input type="email" name="email" value="" placeholder=" Email" required>
+                    </div>
+                    <div class="">
+                        <i class="fa fa-lock" aria-hidden="true">
+                        </i><input style="position: relative" type="password" name="password" placeholder=" Password"
+                            required>
+                    </div>
+                    <div class=""><i class="fa fa-lock" aria-hidden="true">
+                        </i><input style="position: relative" type="password" name="password"
+                            placeholder=" Confirm Password" required>
+                    </div>
+
+                    <button class="submit" type="submit">SIGNUP</button>
+                </div>
+
+                <div class="footer">Already have an account. <a href="#">Login here</a></div>
+            </div>
+        </div>
+    </div>
+    <h1 class="welcome">hghfg</h1>
+    <div class="btns">
+        <button id="btn1">Sign In</button>
+        <button id="btn2">Sign Up</button>
+
+    </div>
+
+
+    <script>;
+        const containerSignUp = document.querySelector(".container")
+        const containerSignIn = document.querySelector(".container1");
+        const signUpBtn = document.querySelector("#btn2")
+        const signInBtn = document.querySelector("#btn1");
+        const closeSignUp = document.querySelector("#signup-closer");
+        const closeSignIn = document.querySelector("#signin-closer");
+        const LoginHere = document.querySelector(".footer a")
+        const newAccount = document.querySelector(".new_account button")
+        const welcome = document.querySelector(".welcome")
+                
+
+
+        newAccount.addEventListener("click", () => {
+            containerSignIn.style.display = "none"
+            containerSignUp.style.display = "block"
+            signUpBtn.style.display = "none"
+            signInBtn.style.display = "none"
+            welcome.style.display = "none"
+
+        })
+
+        LoginHere.addEventListener("click", () => {
+            containerSignUp.style.display = "none"
+            containerSignIn.style.display = "block"
+            signUpBtn.style.display = "none"
+            signInBtn.style.display = "none"
+            welcome.style.display = "none"
+
+
+        })
+
+        closeSignUp.addEventListener("click", () => {
+            containerSignUp.style.display = "none"
+            signUpBtn.style.display = "block"
+            signInBtn.style.display = "block"
+            welcome.style.display = "block"
+
+        })
+        closeSignIn.addEventListener("click", () => {
+            containerSignIn.style.display = "none"
+            signUpBtn.style.display = "block"
+            signInBtn.style.display = "block"
+            welcome.style.display = "block"
+
+        })
+
+
+        signInBtn.addEventListener("click", () => {
+            containerSignIn.style.display = "block"
+            containerSignUp.style.display = "none"
+            signUpBtn.style.display = "none"
+            signInBtn.style.display = "none"
+            welcome.style.display = "none"
+
+        })
+
+
+        signUpBtn.addEventListener("click", () => {
+            containerSignUp.style.display = "block"
+            containerSignIn.style.display = "none"
+            signUpBtn.style.display = "none"
+            welcome.style.display = "none"
+            signInBtn.style.display = "none"
+        })
+
+
+        const texts = ['Welcome To Our Website'];
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+
+        (function type() {
+
+
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, index++);
+
+            welcome.textContent = letter;
+            if (letter.length === currentText.length) {
+                count++;
+                index = 0;
+            }
+            setTimeout(type, 400)
+
+        }())
+
+            
+
+
+    </script>
+</body>
+
+</html>
